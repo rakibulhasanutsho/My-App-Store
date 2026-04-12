@@ -8,6 +8,7 @@ import MainLayout from './mainlayout/MainLayout.jsx'
 import Homepage from './pages/homepage/Homepage.jsx'
 import Installation from './pages/installation/Installation.jsx'
 import AppDetails from './pages/appdetails/AppDetails.jsx'
+import AppProvider from "./components/appcontext/AppContext.jsx"
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,11 @@ const router = createBrowserRouter([
 ])
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router} />
+  
+    <StrictMode>
+    <AppProvider>
+      <RouterProvider router={router} />
+    </AppProvider>
   </StrictMode>,
+  
 )
